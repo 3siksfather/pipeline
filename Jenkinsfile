@@ -10,19 +10,19 @@ node('maven') {
   stage('Test') {
     parallel(
       "Cart Tests": {
-        sh "curl -s -X POST http://eap-app-jenkins.apps.ps.example.com/index.jsp"
+        sh "curl -s -X POST http://jws-app-jenkins.apps.ps.example.com/index.jsp"
       },
       "Discount Tests": {
-        sh "curl -s -X POST http://eap-app-jenkins.apps.ps.example.com/failover.jsp"
+        sh "curl -s -X POST http://jws-app-jenkins.apps.ps.example.com/failover.jsp"
       }
     )
   }
   stage('Build Image') {
-    sh "oc start-build eap-app --from-file=target/ROOT.war --follow"
+    sh "oc start-build jws-app --from-file=target/ROOT.war --follow"
   }
  
 //  stage('Deploy') {
-//    sh "oc rollout latest dc/eap-app -n jenkins"
+//    sh "oc rollout latest dc/jws-app -n jenkins"
 //  }
  
  
