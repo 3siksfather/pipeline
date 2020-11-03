@@ -1,0 +1,37 @@
+<profiles>
+    <profile>
+      <id>internal-maven-releases</id>
+      <repositories>
+        <repository>
+          <id>ocp-maven</id>
+          <name>Internal Hosted repository</name>
+          <url>http://nexus3-jenkins.apps.ps.example.com/repository/ocp-maven/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>ocp-maven</id>
+          <name>Internal Hosted repository</name>
+          <url>http://nexus3-jenkins.apps.ps.example.com/repository/ocp-maven/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+ </profiles>
+ 
+  <activeProfiles>
+    <activeProfile>internal-maven-releases</activeProfile>
+  </activeProfiles>
