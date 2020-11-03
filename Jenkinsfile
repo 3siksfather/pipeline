@@ -2,7 +2,7 @@ node('maven') {
   stage('Maven Build') {
     sh " oc whoami"
     sh " pwd ; id;"
-    git url: "https://github.com/3siksfather/simple"
+    git url: "https://github.com/3siksfather/pipeline"
     sh "cp configuration/settings.xml ~/.m2/"
     sh "mvn package"
     sh "ls  *"
