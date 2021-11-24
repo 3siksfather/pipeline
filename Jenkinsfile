@@ -10,10 +10,10 @@ node('maven') {
   stage('Test') {
     parallel(
       "Cart Tests": {
-        sh "curl -s -X POST http://pipeline-git-jenkins-cicd.apps.cluster.test.com//index.jsp"
+        sh "curl -s -X POST http://jws-app-pipeline.apps.cluster.test.com/index.jsp"
       },
       "Discount Tests": {
-        sh "curl -s -X POST http://pipeline-git-jenkins-cicd.apps.cluster.test.com//failover.jsp"
+        sh "curl -s -X POST http://jws-app-pipeline.apps.cluster.test.com/failover.jsp"
       }
     )
   }
@@ -28,6 +28,6 @@ node('maven') {
  
   stage('System Test') {
     sh " sleep 30"
-    sh "curl -s http://pipeline-git-jenkins-cicd.apps.cluster.test.com//index.jsp"
+    sh "curl -s http://jws-app-pipeline.apps.cluster.test.com/index.jsp"
   }
 }
