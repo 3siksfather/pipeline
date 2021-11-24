@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: List
+metadata: {}
+items:
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      pipeline.alpha.openshift.io/uses: '[{"name": "jws-app", "namespace": "", "kind": "DeploymentConfig"}]'
+    name: jws-app-pipeline
+  spec:
+    source:
+      git:
+        uri: http://github.com/3siksfather/pipeline.git
+      type: Git
+    strategy:
+      type: JenkinsPipeline
+      jenkinsPipelineStrategy:
+        env:
+          - name: MAVEN_MIRROR_URL
+            value: http://nexusrepo-sonatype-nexus-service-nexus-repository.apps.cluster.test.com/repository/nexus-repo/
+        jenkinsfilePath: Jenkinsfile

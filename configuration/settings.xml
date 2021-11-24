@@ -8,7 +8,7 @@
         <repository>
           <id>ocp-maven</id>
           <name>Internal Hosted repository</name>
-          <url>http://nexusrepo-sonatype-nexus-service-nexus-repository.apps.cluster.test.com/repository/maven-central/</url>
+          <url>http://nexusrepo-sonatype-nexus-service-nexus-repository.apps.cluster.test.com/repository/nexus-repo/</url>
           <layout>default</layout>
           <releases>
             <enabled>true</enabled>
@@ -22,7 +22,7 @@
         <pluginRepository>
           <id>ocp-maven</id>
           <name>Internal Hosted repository</name>
-          <url>http://nexusrepo-sonatype-nexus-service-nexus-repository.apps.cluster.test.com/repository/maven-central/</url>
+          <url>http://nexusrepo-sonatype-nexus-service-nexus-repository.apps.cluster.test.com/repository/nexus-repo/</url>
           <layout>default</layout>
           <releases>
             <enabled>true</enabled>
