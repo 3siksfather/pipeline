@@ -18,11 +18,11 @@ node('maven') {
     )
   }
   stage('Build Image') {
-    sh "oc start-build jws-app --from-file=target/ROOT.war --follow"
+    sh "oc start-build jws-app-pipeline --from-file=target/ROOT.war --follow"
   }
  
 //  stage('Deploy') {
-//    sh "oc rollout latest dc/jws-app -n jenkins"
+//    sh "oc rollout latest dc/jws-app-pipeline -n jenkins"
 //  }
  
  
