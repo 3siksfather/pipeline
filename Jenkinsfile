@@ -10,24 +10,24 @@ node('maven') {
   stage('Test') {
     parallel(
       "Cart Tests": {
-        sh "curl -s -X POST http://jws-app-pipeline.apps.cluster.test.com/index.jsp"
+        sh "curl -s -X POST http://jws-app-jenkins-cicd.apps.cluster.test.com/index.jsp"
       },
       "Discount Tests": {
-        sh "curl -s -X POST http://jws-app-pipeline.apps.cluster.test.com/failover.jsp"
+        sh "curl -s -X POST http://jws-app-jenkins-cicd.apps.cluster.test.com/failover.jsp"
       }
     )
   }
   stage('Build Image') {
-    sh "oc start-build jws-app-pipeline --from-file=target/ROOT.war --follow"
+    sh "oc start-build jws-app-jenkins-cicd --from-file=target/ROOT.war --follow"
   }
  
 //  stage('Deploy') {
-//    sh "oc rollout latest dc/jws-app-pipeline -n jenkins"
+//    sh "oc rollout latest dc/jws-app-jenkins-cicd -n jenkins"
 //  }
  
  
   stage('System Test') {
     sh " sleep 30"
-    sh "curl -s http://jws-app-pipeline.apps.cluster.test.com/index.jsp"
+    sh "curl -s http://jws-app-jenkins-cicd.apps.cluster.test.com/index.jsp"
   }
 }
