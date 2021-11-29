@@ -6,7 +6,7 @@ items:
   kind: BuildConfig
   metadata:
     annotations:
-      pipeline.alpha.openshift.io/uses: '[{"name": "jws-app", "namespace": "jenkins-cicd", "kind": "DeploymentConfig"}]'
+      pipeline.alpha.openshift.io/uses: '[{"name": "", "namespace": "", "kind": "DeploymentConfig"}]'
     name: jws-app-jenkins-cicd
   spec:
     source:
