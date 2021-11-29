@@ -18,7 +18,7 @@ node('maven') {
     )
   }
   stage('Build Image') {
-    sh "oc start-build jws-app-jenkins-cicd --from-file=target/ROOT.war --follow"
+    sh "oc start-build jws-app --from-file=target/ROOT.war -n jenkins-cicd --follow"
   }
  
 //  stage('Deploy') {
